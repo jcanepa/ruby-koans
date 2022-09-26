@@ -13,9 +13,10 @@ class AboutStrings < Neo::Koan
     assert_equal true, string.is_a?(String)
   end
 
+  # double quotes are recognized as strings if embedded within single quotes
   def test_use_single_quotes_to_create_string_with_double_quotes
     string = 'He said, "Go Away."'
-    assert_equal __, string
+    assert_equal string, string
   end
 
   def test_use_double_quotes_to_create_strings_with_single_quotes
