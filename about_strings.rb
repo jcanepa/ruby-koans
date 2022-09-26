@@ -105,6 +105,7 @@ EOS
     #
     # Ruby programmers tend to favor the shovel operator (<<) over the
     # plus equals operator (+=) when building up strings.  Why?
+    # ...
   end
 
   def test_double_quoted_string_interpret_escape_characters
