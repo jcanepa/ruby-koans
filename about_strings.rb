@@ -1,11 +1,13 @@
 require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 class AboutStrings < Neo::Koan
+  # strings in double quotes are recognized as a String
   def test_double_quoted_strings_are_strings
     string = "Hello, World"
     assert_equal true, string.is_a?(String)
   end
 
+  # strings in single quotes are recognized as a String
   def test_single_quoted_strings_are_also_strings
     string = 'Goodbye, World'
     assert_equal __, string.is_a?(String)
