@@ -152,6 +152,7 @@ EOS
     assert_equal 'a', string[1]
 
     # Surprised?
+    # No, I expected Ruby to follow a zero-based index for arrays.
   end
 
   in_ruby_version("1.8") do
