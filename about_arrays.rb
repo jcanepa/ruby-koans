@@ -56,7 +56,7 @@ class AboutArrays < Neo::Koan
 
     assert_equal [array[0], array[1], array[2]], array[0..2]
     assert_equal [array[0], array[1]], array[0...2]
-    assert_equal [array[1], array[2]], array[2..-1]
+    assert_equal [array[2], array[-1]], array[2..-1]
   end
 
   def test_pushing_and_popping_arrays
