@@ -27,5 +27,9 @@ class AboutKeywordArguments < Neo::Koan
   # THINK ABOUT IT:
   #
   # Keyword arguments always have a default value, making them optional to the caller
+  # I don't think this is true. Keyword arguments may or may not have a default value:
+  def foo(bar:)
+    puts 'proof'
+  end
 
 end
