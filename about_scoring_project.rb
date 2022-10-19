@@ -31,10 +31,13 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   return 0 if dice.length() == 0;
+  # dice = dice.sort();
+
   # Three ones returns 1000
   # A set of three returns 100 * n
   # A single one is worth 100
   # A single 5 is worth 50
+  return 50 if dice[0] == 5;
 end
 
 class AboutScoringProject < Neo::Koan
