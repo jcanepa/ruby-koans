@@ -14,6 +14,7 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  # order values, so a is the smallest & c the largest
   a, b, c = [a, b, c].sort;
 
   # throw exceptions for triangles with any invalid side
