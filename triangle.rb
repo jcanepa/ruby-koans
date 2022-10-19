@@ -14,14 +14,18 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # throw exceptions for invalid value provided
-  raise TriangleError if a == 0 or b == 0 or c == 0;
+  a, b, c = [a, b, c].sort;
+
+  # throw exceptions for triangles with any invalid side
+  raise TriangleError if a <= 0;
+  raise TriangleError if c >= (a + b);
+
   # three sides equal
-  return :equilateral if a == b && b == c;
+  return :equilateral if a == b && a == c;
   # two sides equal
   return :isosceles if (a == b) or (b == c) or (a == c);
   # no sides equal
-  return :scalene;
+  :scalene;
 end
 
 # Error class used in part 2.  No need to change this code.
