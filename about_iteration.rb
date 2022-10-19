@@ -121,4 +121,6 @@ class AboutIteration < Neo::Koan
   #
   # When you get to the "AboutSandwichCode" koan, recheck your answer.
 
+  # I would guess it defines a scope where we have access to the file/its rows and there's no need to explictly close it when we're done.
+
 end
