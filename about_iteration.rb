@@ -89,6 +89,8 @@ class AboutIteration < Neo::Koan
 
     # Extra Credit:
     # Describe in your own words what inject does.
+    # injects a new item into the array before operating on it,
+    # the product/sum arguments stores a local output that can be built upon throughout iterations
   end
 
   def test_all_iteration_methods_work_on_any_collection_not_just_arrays
