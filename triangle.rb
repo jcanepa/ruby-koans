@@ -14,6 +14,8 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  # throw exceptions for invalid value provided
+  raise TriangleError if a == 0 or b == 0 or c == 0;
   # three sides equal
   return :equilateral if a == b && b == c;
   # two sides equal
