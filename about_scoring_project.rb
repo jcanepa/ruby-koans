@@ -31,13 +31,37 @@ require File.expand_path(File.dirname(__FILE__) + '/neo')
 
 def score(dice)
   return 0 if dice.length() == 0;
-  # dice = dice.sort();
 
-  # Three ones returns 1000
-  # A set of three returns 100 * n
-  # A single one is worth 100
-  # A single 5 is worth 50
-  return 50 if dice[0] == 5;
+  die_counts = {
+    1 => 0,
+    2 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0
+  };
+
+  for die in dice
+    die_counts[die] = die_counts[die] + 1;
+  end
+
+  sum = 0;
+
+  die_counts.each do |face_value, count|
+    # award points for set
+    if count >= 3
+      if face_value == 1
+        sum = sum + 1000;
+      else
+        sum = sum + (face_value*100);
+      end
+      die_counts[face_value] = die_counts[face_value] - 3;
+    end
+  end
+
+  # award points for 1s and 5s
+  sum = sum + (die_counts[1]*100);
+  sum = sum + (die_counts[5]*50);
+  sum;
 end
 
 class AboutScoringProject < Neo::Koan
