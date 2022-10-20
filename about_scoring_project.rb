@@ -37,7 +37,8 @@ def score(dice)
     2 => 0,
     3 => 0,
     4 => 0,
-    5 => 0
+    5 => 0,
+    6 => 0
   };
 
   for die in dice
@@ -52,7 +53,7 @@ def score(dice)
       if face_value == 1
         sum = sum + 1000;
       else
-        sum = sum + (face_value*100);
+        sum = sum + (face_value * 100);
       end
       die_counts[face_value] = die_counts[face_value] - 3;
     end
