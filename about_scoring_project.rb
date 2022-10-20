@@ -41,14 +41,15 @@ def score(dice)
     6 => 0
   };
 
+  # count the number of dice values in the roll
   for die in dice
     die_counts[die] = die_counts[die] + 1;
   end
 
   sum = 0;
 
+  # award points for sets of three
   die_counts.each do |face_value, count|
-    # award points for set
     if count >= 3
       if face_value == 1
         sum = sum + 1000;
@@ -59,7 +60,7 @@ def score(dice)
     end
   end
 
-  # award points for 1s and 5s
+  # award points for single 1's and 5's
   sum = sum + (die_counts[1]*100);
   sum = sum + (die_counts[5]*50);
   sum;
